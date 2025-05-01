@@ -21,7 +21,7 @@ export default defineConfig({
   /* Retry on CI only */
   // retries: process.env.CI ? 2 : 0,
   /* Retry on local only */
-     retries: 2,
+  retries: 2,
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
@@ -83,4 +83,25 @@ export default defineConfig({
   //   reuseExistingServer: !process.env.CI,
   // },
 });
+
+
+/**
+ * In how many attributes we can put in "use" section
+ * export default defineConfig({
+  use: {
+    acceptDownloads: false,
+
+    // Base URL to use in actions like `await page.goto('/')`.
+     baseURL: "http://localhost:3000",
+
+    //  Whether to run browser in headless mode. More details for Chromium and Firefox. Defaults to true unless the devtools option is true.
+    headless: false
+
+    // Custom attribute to be used in page.getByTestId(). data-testid is used by default.
+    testIdAttribute: 'pw-test-id',
+
+
+  },
+});
+ */
 

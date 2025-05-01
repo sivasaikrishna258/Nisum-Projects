@@ -1,0 +1,2 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","5095","handling multiple windows/popups","chromium","Thu May 01 15:41:47 IST 2025","failed","Thu May 01 15:41:52 IST 2025","","handlingMultipletabsOrWindows.spec.js","",""

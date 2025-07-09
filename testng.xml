@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="C:/Users/sadvanapu/IdeaProjects/RestAssuredFramework">
+        <classes>
+           <class name="com.GoRestApi.tests.PostUser"> </class>
+            <class name="com.GoRestApi.tests.UpdateUser"></class>
+        </classes>
+    </test>
+</suite>

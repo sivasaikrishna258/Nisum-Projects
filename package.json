@@ -1,0 +1,25 @@
+{
+  "name": "playwrightpoc",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "npx cucumber-js --format json:reports/cucumber-report.json --config tests/cucumber.js ; node generate-cucumber-report.js",
+    "test:parallel": "npx cucumber-js --parallel 4 --format json:reports/cucumber-report.json --config tests/cucumber.js ; node generate-cucumber-report.js",
+    "report": "node generate-cucumber-report.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  
+  "devDependencies": {
+    "@cucumber/cucumber": "^11.3.0",
+    "@playwright/test": "^1.52.0",
+    "@types/node": "^22.15.21",
+    "multiple-cucumber-html-reporter": "^3.9.2"
+  },
+  "dependencies": {
+    "dotenv": "^16.5.0",
+    "strip-ansi": "^6.0.1"
+  }
+}

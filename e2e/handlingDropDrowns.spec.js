@@ -1,6 +1,15 @@
 import { test, expect, chromium } from '@playwright/test';
 
+/**
+ * * Single selection matching the value or label
+await page.getByLabel('Choose a color').selectOption('blue');
 
+//* Single selection matching the label
+await page.getByLabel('Choose a color').selectOption({ label: 'Blue' });
+
+//* Multiple selected items
+await page.getByLabel('Choose multiple colors').selectOption(['red', 'green', 'blue']);
+ */
 test('handling dropdrowns', async ({ page }) => {
 
     /**
@@ -20,8 +29,7 @@ test('handling dropdrowns', async ({ page }) => {
     //without select tag one approach
     await page.goto('https://www.wikipedia.org/');
 
-    const searchInput = await page.locator('#searchInput');
-    searchInput.get
+    const searchInput = page.locator('#searchInput');
     await searchInput.click();  // Click on the search input
     await searchInput.fill('delhi');  // Type 'delhi'
 
@@ -57,6 +65,9 @@ test('handling bootstrap dropdrowns', async ({ page }) => {
 
     const allClasses=await page.$$('ul[role="listbox"] li');
 
+    console.log(allClasses.length); // Log the number of items
+
+
     for(let seat of allClasses){
 
         if (await seat.innerText()==="Anubhuti Class (EA)") {
@@ -66,3 +77,9 @@ test('handling bootstrap dropdrowns', async ({ page }) => {
     }
 
 });
+
+/**
+ * difference between $$ and locator
+ * $$ returns an array of elements matching the selector, while locator() returns a single locator object that can be used to interact with the element.
+ * $$ is useful when you want to get multiple elements and perform actions on each of them, while locator() is useful when you want to interact with a specific element.
+ */

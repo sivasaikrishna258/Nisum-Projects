@@ -20,3 +20,25 @@ test('handling web table', async ({ page }) => {
 
 
 });
+
+test("dynamic webtable", async ({page}) =>{
+
+    await page.goto("https://datatables.net/examples/basic_init/zero_configuration.html");
+    await page.waitForTimeout(2000);
+
+    const tableRows=page.locator("table#example tbody tr");
+
+    for(let i=0;i<await tableRows.count();i++){
+
+        const tableCols= tableRows.nth(i).locator("td");
+
+            for(let j=0;j<await tableRows.count();j++){
+                console.log(await tableCols.nth(j).innerText());
+            }
+            break;
+    }
+
+
+
+
+});

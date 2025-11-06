@@ -78,7 +78,7 @@ if "${params.EXECUTION_MODE}" == "Parallel" (
                     keepAll: true,
                     reportDir: 'reports/html-report',
                     reportFiles: 'index.html',
-                    reportName: "QA Report - ${env.BRANCH_NAME}",
+                    reportName: "QA Report",
                     includes: '**/*'
                 ])
             }

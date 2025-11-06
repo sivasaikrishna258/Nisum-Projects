@@ -19,7 +19,8 @@ if (fs.existsSync(screenshotDir)) {
 
 
 Before(async function () {
-  this.browser = await chromium.launch({ headless: false });
+    const isCI = process.env.CI === 'true'; // will be set in Jenkins
+  this.browser = await chromium.launch({ headless: isCI });
   this.context = await this.browser.newContext();
   this.page = await this.context.newPage();
     this.page.setDefaultNavigationTimeout(30000); // 30s for navigation
